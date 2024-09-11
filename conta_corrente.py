@@ -5,6 +5,8 @@ class ContaCorrente(Conta) :
         super().__init__(numero, agencia, cliente, saldo)
         self.historico_transacoes = []
     
+    def cria_conta(self):
+        return super().cria_conta()
 
     def saque(self, valor):
         if valor > self.saldo:

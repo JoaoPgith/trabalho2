@@ -5,6 +5,9 @@ class ContaPoupanca(ContaCorrente):
         super().__init__(numero, agencia, cliente, saldo, historico_transacoes)
         self.taxa_juros = taxa_juros
     
+    def cria_conta(self):
+        return super().cria_conta()
+    
     def saque(self, valor):
         if valor > self.saldo:
             print("Saldo insuficiente para saque.")
@@ -22,3 +25,9 @@ class ContaPoupanca(ContaCorrente):
     def extrato(self):
         print(f"Extrato da Conta {self.numero}:")
         print(f"Saldo atual: R${self.saldo:.2f}")
+
+    def aplicar_juros(self):
+        juros = self.saldo * self.taxa_juros
+        self.saldo += juros
+        self.historico_transacoes.append(f"Juros de {juros} aplicados")
+        return f"Juros de {juros} aplicados ao saldo"
