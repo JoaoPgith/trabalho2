@@ -1,5 +1,5 @@
 from funcionario import Funcionario
-#duvida: atributo em formato lista (funcionarios)
+
 class Gerente(Funcionario):
     
     def __init__(self, nome, cpf, num_matricula, funcionarios):
